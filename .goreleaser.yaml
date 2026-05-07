@@ -1,0 +1,32 @@
+version: 2
+
+builds:
+  - id: ego
+    main: ./cmd/ego
+    binary: ego
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - windows
+    goarch:
+      - amd64
+      - arm64
+    ignore:
+      - goos: windows
+        goarch: arm64
+
+archives:
+  - format: tar.gz
+    name_template: >-
+      {{ .Binary }}-{{ .Os }}-{{ .Arch }}
+    format_overrides:
+      - goos: windows
+        format: zip
+
+release:
+  prerelease: auto
+  mode: replace
+
+checksum:
+  name_template: "checksums.txt"
