@@ -8,7 +8,7 @@
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
     ["@semantic-release/exec", {
-      "publishCmd": "git tag v${nextRelease.version} && git push origin v${nextRelease.version}"
+      "publishCmd": "git push origin v${nextRelease.version}"
     }],
     ["@semantic-release/git", {
       "assets": ["CHANGELOG.md"],
