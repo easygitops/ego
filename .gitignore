@@ -1,0 +1,9 @@
+# Binaries
+ego
+*.exe
+
+# Dependencies
+vendor/
+
+# Go workspace
+go.work
