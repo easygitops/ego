@@ -1,0 +1,34 @@
+{
+  "branches": [
+    "main",
+    {
+      "name": "*",
+      "prerelease": true
+    }
+  ],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    [
+      "@semantic-release/github",
+      {
+        "assets": [
+          {
+            "path": "ego-linux-amd64/*",
+            "label": "Linux x86_64"
+          },
+          {
+            "path": "ego-linux-arm64/*",
+            "label": "Linux ARM64"
+          },
+          {
+            "path": "ego-windows-amd64.exe/*",
+            "label": "Windows x86_64"
+          }
+        ]
+      }
+    ],
+    "@semantic-release/git"
+  ]
+}
